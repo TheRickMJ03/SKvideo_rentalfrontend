@@ -1,0 +1,13 @@
+import React, { useState } from 'react';
+
+function Customer() {
+
+
+  return (
+    <div>
+      <p>Customer!!!!!</p>
+    </div>
+  );
+}
+
+export default Customer;
