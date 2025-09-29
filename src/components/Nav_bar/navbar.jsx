@@ -12,15 +12,21 @@ const Navbar = () => {
       <div className='nav-logo'>
         <img src={logo} alt="" />
       </div>
+      {/* Navigation menu */}
       <ul className='nav-menu'>
+        {/* Home link */}
+
         <li onClick={() => setActiveMenu('Home')}>
           <Link to='/' style={{ textDecoration: 'none' }}>Home</Link>
           {activeMenu === 'Home' ? <hr /> : null}
         </li>
+        {/* Films link */}
         <li onClick={() => setActiveMenu('Films')}>
           <Link to='/Films' style={{ textDecoration: 'none' }}>Films</Link>
           {activeMenu === 'Films' ? <hr /> : null}
         </li>
+        
+        {/* Customer link */}
         <li onClick={() => setActiveMenu('Customer')}>
           <Link to='/Customer' style={{ textDecoration: 'none' }}>Customer</Link>
           {activeMenu === 'Customer' ? <hr /> : null}

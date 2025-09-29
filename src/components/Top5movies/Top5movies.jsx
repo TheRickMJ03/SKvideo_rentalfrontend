@@ -31,29 +31,25 @@ const [selectMovie, setSelectedmovie] = useState(null)
   if (loading) return <p>Loading top movies...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  const duplicatedMovies = [...topMovies, ...topMovies, ...topMovies, ...topMovies];
 
   return (
     <div className="top-movies-container">
       <h2>Top 5 Rented Films of All Time</h2>
 
-      <div className="scroller-wrapper">
-        <div className="scroller">
-          <div className="scroller__inner">
-            {duplicatedMovies.map((movie, index) => (
-                      <div
-                  key={`${movie.movie_id}-${index}`}
-                  className="movie-card"
-                  onClick={() => setSelectedmovie(movie)} 
-                >
-                <div className="poster-placeholder">🎬</div>
-                <h3>{movie.title}</h3>
-                <p>{movie.release_year} • {movie.rating}</p>
-                    </div>
-            ))}
-          </div>
-        </div>
-      </div>
+     <div className="movies-grid">
+  {topMovies.map((movie) => (
+    <div
+      key={movie.movie_id}
+      className="movie-card"
+      onClick={() => setSelectedmovie(movie)}
+    >
+      <div className="poster-placeholder">🎬</div>
+      <h3>{movie.title}</h3>
+      <p>{movie.release_year} • {movie.rating}</p>
+    </div>
+  ))}
+</div>
+
 
       {selectMovie && (
     <div className="overlay" onClick={() => setSelectedmovie(null)}>
